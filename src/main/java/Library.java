@@ -22,6 +22,23 @@ public class Library {
         }
     }
 
+    public void removeBook(Book book){
+        this.collection.remove(book);
+    }
+
+    public void acceptReturn(Borrower borrower){
+        if(getBookCount() < this.capacity) {
+            Book book = borrower.removeBook();
+            addBook(book);
+        }
+    }
+
+//    public void lendBook(Borrower borrower){
+//        Book book = borrower.addBook(book);
+//    }
+
+
+
 
 
 
